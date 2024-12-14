@@ -279,7 +279,9 @@
               <!--  <li><strong>Client</strong> XYZ</li>-->
                <!-- <li><strong>Project date</strong> 01 March, 2024</li>-->
                <!-- <li><strong>Project URL</strong> <a href="#">www.example.com</a></li>-->
-                               <script>
+
+                <li><a href="" class="btn-visit align-self-start" id="gameLink">Opne Game Link</a></li>
+                                               <script>
 // Parse URL query parameters
 const urlParams1 = new URLSearchParams(window.location.search);
 const gameLink = urlParams1.get('gameLink');
@@ -293,6 +295,7 @@ if (gameLink) {
     const linkElement = document.getElementById('gameLink');
     if (linkElement) {
         linkElement.href = gameLinkDecoded;
+         linkElement.target = "_blank"; // Open in a new tab
         linkElement.textContent = "Open Game Link";
     }
 } else {
@@ -302,8 +305,6 @@ console.log(decodeURIComponent(urlParams.get('gameLink')));
 
 
                 </script>
-                <li><a href="https%3A%2F%2Fwww.google.com" class="btn-visit align-self-start" id="gameLink">Opne Game Link</a></li>
-
               </ul>
             </div>
           </div>
