@@ -276,10 +276,34 @@
               <h3>Project information</h3>
               <ul>
                 <li><strong>Category</strong> Games</li>
-                <li><strong>Client</strong> XYZ</li>
-                <li><strong>Project date</strong> 01 March, 2024</li>
-                <li><strong>Project URL</strong> <a href="#">www.example.com</a></li>
-                <li><a href="#" class="btn-visit align-self-start">Opne Game Link</a></li>
+              <!--  <li><strong>Client</strong> XYZ</li>-->
+               <!-- <li><strong>Project date</strong> 01 March, 2024</li>-->
+               <!-- <li><strong>Project URL</strong> <a href="#">www.example.com</a></li>-->
+                               <script>
+// Parse URL query parameters
+const urlParams1 = new URLSearchParams(window.location.search);
+const gameLink = urlParams1.get('gameLink');
+
+// Use the `gameLink` dynamically
+if (gameLink) {
+    const gameLinkDecoded = decodeURIComponent(gameLink); // Decode the URL
+    console.log("Game Link:", gameLinkDecoded);
+
+    // Set the href of a button/link dynamically
+    const linkElement = document.getElementById('gameLink');
+    if (linkElement) {
+        linkElement.href = gameLinkDecoded;
+        linkElement.textContent = "Open Game Link";
+    }
+} else {
+    console.error("No game link found in the URL");
+}
+console.log(decodeURIComponent(urlParams.get('gameLink')));
+
+
+                </script>
+                <li><a href="https%3A%2F%2Fwww.google.com" class="btn-visit align-self-start" id="gameLink">Opne Game Link</a></li>
+
               </ul>
             </div>
           </div>
